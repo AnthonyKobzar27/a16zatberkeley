@@ -3,12 +3,36 @@
 import { useEffect } from 'react';
 import Image from 'next/image';
 
+// Type definition for VANTA
+interface VantaGlobe {
+  GLOBE: (options: {
+    el: string;
+    mouseControls: boolean;
+    touchControls: boolean;
+    gyroControls: boolean;
+    minHeight: number;
+    minWidth: number;
+    scale: number;
+    scaleMobile: number;
+    backgroundColor: number;
+    color: number;
+    color2: number;
+    size: number;
+  }) => void;
+}
+
+declare global {
+  interface Window {
+    VANTA?: VantaGlobe;
+  }
+}
+
 export default function Home() {
   useEffect(() => {
     // Initialize Vanta.js globe effect
     const initVanta = () => {
-      if (typeof window !== 'undefined' && (window as any).VANTA) {
-        (window as any).VANTA.GLOBE({
+      if (typeof window !== 'undefined' && window.VANTA) {
+        window.VANTA.GLOBE({
           el: "#vanta-background",
           mouseControls: true,
           touchControls: true,
