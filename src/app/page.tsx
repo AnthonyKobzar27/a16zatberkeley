@@ -134,12 +134,12 @@ export default function Home() {
             </div>
 
             {/* Register button */}
-            <div className="w-full max-w-xs lg:max-w-none">
+            <div className="w-auto">
               <a 
                 href="https://partiful.com/e/5lvjTXL4wXzrRyIsYMxW?" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="block w-full text-white px-6 py-3 lg:px-16 lg:py-8 rounded-full text-lg lg:text-3xl font-semibold active:scale-95 lg:hover:scale-105 transition-transform duration-300 shadow-xl text-center min-h-[44px] flex items-center justify-center" 
+                className="inline-block text-white px-8 py-3 lg:px-12 lg:py-6 rounded-full text-lg lg:text-2xl font-semibold active:scale-95 lg:hover:scale-105 transition-transform duration-300 shadow-xl text-center min-h-[44px] flex items-center justify-center" 
                 style={{backgroundColor: '#ff3f81'}}
               >
                 Register Now
