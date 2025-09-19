@@ -85,12 +85,12 @@ export default function Home() {
       {isBackgroundLoaded && (
         <div className="relative z-20 h-full flex items-center justify-center lg:justify-start">
           {/* Content positioned 20% from left on desktop, centered on mobile */}
-          <div className="flex flex-col items-center justify-center px-4 sm:px-6 lg:ml-[20%] lg:px-0 h-full">
+          <div className="flex flex-col items-center justify-center px-4 lg:ml-[20%] lg:px-0 h-full">
             {/* Logos section */}
-            <div className="mb-4 sm:mb-6 lg:mb-12">
-              <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-4 lg:space-x-8">
+            <div className="mb-8 lg:mb-12">
+              <div className="flex items-center justify-center space-x-2 lg:space-x-8">
                 {/* a16z and SF Tech Week grouped together */}
-                <div className="flex items-center space-x-2 sm:space-x-3 lg:space-x-4">
+                <div className="flex items-center space-x-1 lg:space-x-4">
                   <Image
                     src="/logos/image 2.png"
                     alt="a16z logo"
@@ -109,7 +109,7 @@ export default function Home() {
                 </div>
 
                 {/* X symbol */}
-                <div className="text-2xl sm:text-3xl lg:text-5xl font-bold text-white drop-shadow-lg">×</div>
+                <div className="text-lg lg:text-5xl font-bold text-white drop-shadow-lg">×</div>
                 
                 {/* UC Berkeley Logo */}
                 <Image
@@ -121,25 +121,25 @@ export default function Home() {
                 />
               </div>
                 
-                {/* Hackathon text */}
-                <div className="text-center mt-3 sm:mt-4 lg:mt-12">
-                  <h1 className="text-2xl sm:text-3xl lg:text-8xl font-bold text-white drop-shadow-lg">Hackathon</h1>
-                </div>
+              {/* Hackathon text */}
+              <div className="text-center mt-6 lg:mt-12">
+                <h1 className="text-3xl lg:text-8xl font-bold text-white drop-shadow-lg">Hackathon</h1>
               </div>
+            </div>
 
-              {/* Date and time section */}
-              <div className="mb-4 sm:mb-6 lg:mb-16 text-center">
-                <div className="text-sm sm:text-base lg:text-2xl font-bold text-white mb-1">7pm - 12am</div>
-                <div className="text-base sm:text-lg lg:text-3xl font-bold text-white mb-2">10 / 9 / 2025</div>
-              </div>
+            {/* Date and time section */}
+            <div className="mb-8 lg:mb-16 text-center">
+              <div className="text-sm lg:text-2xl font-bold text-white mb-1">7pm - 12am</div>
+              <div className="text-base lg:text-3xl font-bold text-white mb-2">10 / 9 / 2025</div>
+            </div>
 
             {/* Register button */}
-            <div className="w-full max-w-xs sm:max-w-sm lg:max-w-none">
+            <div className="w-full max-w-xs lg:max-w-none">
               <a 
                 href="https://partiful.com/e/5lvjTXL4wXzrRyIsYMxW?" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="block w-full text-white px-4 py-2 sm:px-6 sm:py-3 lg:px-16 lg:py-8 rounded-full text-base sm:text-lg lg:text-3xl font-semibold active:scale-95 lg:hover:scale-105 transition-transform duration-300 shadow-xl text-center min-h-[44px] flex items-center justify-center" 
+                className="block w-full text-white px-6 py-3 lg:px-16 lg:py-8 rounded-full text-lg lg:text-3xl font-semibold active:scale-95 lg:hover:scale-105 transition-transform duration-300 shadow-xl text-center min-h-[44px] flex items-center justify-center" 
                 style={{backgroundColor: '#ff3f81'}}
               >
                 Register Now
