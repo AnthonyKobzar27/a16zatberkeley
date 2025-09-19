@@ -31,9 +31,10 @@ export default function Home() {
   const [isBackgroundLoaded, setIsBackgroundLoaded] = useState(false);
 
   useEffect(() => {
-    // Initialize Vanta.js globe effect
-    const initVanta = () => {
-      if (typeof window !== 'undefined' && window.VANTA) {
+    // Wait for scripts to load, then initialize Vanta.js
+    const waitForScripts = () => {
+      if (typeof window !== 'undefined' && window.VANTA && window.VANTA.GLOBE) {
+        // Scripts are loaded, initialize Vanta
         window.VANTA.GLOBE({
           el: "#vanta-background",
           mouseControls: true,
@@ -51,12 +52,13 @@ export default function Home() {
         // Mark background as loaded
         setIsBackgroundLoaded(true);
       } else {
-        // Retry if VANTA is not loaded yet
-        setTimeout(initVanta, 100);
+        // Scripts not ready yet, retry
+        setTimeout(waitForScripts, 50);
       }
     };
 
-    initVanta();
+    // Start checking for scripts
+    waitForScripts();
   }, []);
 
   return (
@@ -76,15 +78,14 @@ export default function Home() {
 
       {/* Main content - only show when background is loaded */}
       {isBackgroundLoaded && (
-        <div className="relative z-20 h-full flex items-center justify-center md:justify-start">
-          {/* Content positioned 15% from left on desktop, centered on mobile */}
-          <div className="flex flex-col items-center justify-center md:ml-[20%]">
+        <div className="relative z-20 h-full flex items-center justify-center lg:justify-start">
+          {/* Content positioned 20% from left on desktop, centered on mobile */}
+          <div className="flex flex-col items-center justify-center px-4 sm:px-6 lg:ml-[20%] lg:px-0">
             {/* Logos section */}
-            <div className="mb-12">
-            <div className="flex items-center justify-center space-x-2 md:space-x-8">
-              {/* a16z and SF Tech Week grouped together */}
-              <div className="flex items-center space-x-1 md:space-x-4">
-                <div>
+            <div className="mb-8 sm:mb-10 lg:mb-12">
+              <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 lg:space-x-8">
+                {/* a16z and SF Tech Week grouped together */}
+                <div className="flex items-center space-x-2 sm:space-x-3 lg:space-x-4">
                   <Image
                     src="/logos/image 2.png"
                     alt="a16z logo"
@@ -92,9 +93,7 @@ export default function Home() {
                     height={90}
                     className="rounded-lg"
                   />
-                </div>
-                
-                <div>
+                  
                   <Image
                     src="/logos/image 4.png"
                     alt="SF Tech Week logo"
@@ -103,13 +102,11 @@ export default function Home() {
                     className="rounded-lg"
                   />
                 </div>
-              </div>
 
-              {/* X symbol */}
-              <div className="text-3xl md:text-5xl font-bold text-white drop-shadow-lg">×</div>
-              
-              {/* UC Berkeley Logo */}
-              <div>
+                {/* X symbol */}
+                <div className="text-2xl sm:text-3xl lg:text-5xl font-bold text-white drop-shadow-lg">×</div>
+                
+                {/* UC Berkeley Logo */}
                 <Image
                   src="/logos/yellowberk.jpg"
                   alt="Cal logo"
@@ -118,27 +115,26 @@ export default function Home() {
                   className="rounded-lg"
                 />
               </div>
-            </div>
-              
-              {/* Hackathon text */}
-              <div className="text-center mt-8 md:mt-12">
-                <h1 className="text-4xl md:text-8xl font-bold text-white drop-shadow-lg">Hackathon</h1>
+                
+                {/* Hackathon text */}
+                <div className="text-center mt-6 sm:mt-8 lg:mt-12">
+                  <h1 className="text-3xl sm:text-4xl lg:text-8xl font-bold text-white drop-shadow-lg">Hackathon</h1>
+                </div>
               </div>
-            </div>
 
-            {/* Date and time section */}
-            <div className="mb-12 md:mb-16 text-center">
-              <div className="text-lg md:text-2xl font-bold text-white mb-2">7pm - 12am</div>
-              <div className="text-xl md:text-3xl font-bold text-white mb-3">10 / 9 / 2025</div>
-            </div>
+              {/* Date and time section */}
+              <div className="mb-8 sm:mb-10 lg:mb-16 text-center">
+                <div className="text-base sm:text-lg lg:text-2xl font-bold text-white mb-1 sm:mb-2">7pm - 12am</div>
+                <div className="text-lg sm:text-xl lg:text-3xl font-bold text-white mb-2 sm:mb-3">10 / 9 / 2025</div>
+              </div>
 
             {/* Register button */}
-            <div>
+            <div className="w-full max-w-xs sm:max-w-sm lg:max-w-none">
               <a 
                 href="https://partiful.com/e/5lvjTXL4wXzrRyIsYMxW?" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="block w-full text-white px-8 py-4 md:px-16 md:py-8 rounded-full text-xl md:text-3xl font-semibold hover:scale-105 transition-transform duration-300 shadow-xl text-center" 
+                className="block w-full text-white px-6 py-3 sm:px-8 sm:py-4 lg:px-16 lg:py-8 rounded-full text-lg sm:text-xl lg:text-3xl font-semibold active:scale-95 lg:hover:scale-105 transition-transform duration-300 shadow-xl text-center min-h-[44px] flex items-center justify-center" 
                 style={{backgroundColor: '#ff3f81'}}
               >
                 Register Now

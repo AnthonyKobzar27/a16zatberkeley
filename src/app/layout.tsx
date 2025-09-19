@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "a16z Hackathon @ Berkeley",
   description: "Join us for an exciting hackathon hosted by a16z at UC Berkeley. Build the future of technology!",
+  viewport: "width=device-width, initial-scale=1.0",
 };
 
 export default function RootLayout({
