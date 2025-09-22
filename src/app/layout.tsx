@@ -18,9 +18,9 @@ export const metadata: Metadata = {
   description: "Join us for an exciting hackathon hosted by a16z at UC Berkeley. Build the future of technology!",
   viewport: "width=device-width, initial-scale=1.0",
   icons: {
-    icon: "/logos/image 4.png",
-    shortcut: "/logos/image 4.png",
-    apple: "/logos/image 4.png",
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
   },
 };
 
@@ -32,9 +32,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+        <link rel="shortcut icon" href="/favicon.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
+        <meta name="msapplication-TileImage" content="/favicon.png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
