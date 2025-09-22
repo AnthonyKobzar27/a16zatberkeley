@@ -139,7 +139,7 @@ export default function Home() {
                 href="https://partiful.com/e/5lvjTXL4wXzrRyIsYMxW?" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-block text-white px-8 py-3 lg:px-12 lg:py-6 rounded-full text-lg lg:text-2xl font-semibold active:scale-95 lg:hover:scale-105 transition-transform duration-300 shadow-xl text-center min-h-[44px] flex items-center justify-center" 
+                className="inline-block text-white px-7 py-3 lg:px-10 lg:py-4 rounded-full text-lg lg:text-xl font-semibold active:scale-95 lg:hover:scale-105 transition-transform duration-300 shadow-xl text-center min-h-[44px] flex items-center justify-center" 
                 style={{backgroundColor: '#ff3f81'}}
               >
                 Register Now

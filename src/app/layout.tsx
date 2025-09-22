@@ -14,9 +14,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "a16z Hackathon @ Berkeley",
+  title: "SF Tech Week Hackathon",
   description: "Join us for an exciting hackathon hosted by a16z at UC Berkeley. Build the future of technology!",
   viewport: "width=device-width, initial-scale=1.0",
+  icons: {
+    icon: "/logos/image 4.png",
+    shortcut: "/logos/image 4.png",
+    apple: "/logos/image 4.png",
+  },
 };
 
 export default function RootLayout({
@@ -26,6 +31,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/favicon.ico" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
