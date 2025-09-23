@@ -1,154 +1,42 @@
-'use client';
-
-import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { Button } from '@/components/ui/button';
 
-// Type definition for VANTA
-interface VantaGlobe {
-  GLOBE: (options: {
-    el: string;
-    mouseControls: boolean;
-    touchControls: boolean;
-    gyroControls: boolean;
-    minHeight: number;
-    minWidth: number;
-    scale: number;
-    scaleMobile: number;
-    backgroundColor: number;
-    color: number;
-    color2: number;
-    size: number;
-  }) => void;
-}
-
-declare global {
-  interface Window {
-    VANTA?: VantaGlobe;
-  }
-}
-
-export default function Home() {
-  const [isBackgroundLoaded, setIsBackgroundLoaded] = useState(false);
-
-  useEffect(() => {
-    // Initialize Vanta.js globe effect with synchronous scripts
-    const initVanta = () => {
-      if (typeof window !== 'undefined' && window.VANTA && window.VANTA.GLOBE) {
-        try {
-          window.VANTA.GLOBE({
-            el: "#vanta-background",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
-            backgroundColor: 0x222222,
-            color: 0xff3f81,
-            color2: 0xffffff,
-            size: 1
-          });
-          // Mark background as loaded
-          setIsBackgroundLoaded(true);
-        } catch (error) {
-          console.log('Vanta initialization failed:', error);
-          // If initialization fails, retry after a short delay
-          setTimeout(initVanta, 100);
-        }
-      } else {
-        // Scripts not ready yet, retry
-        setTimeout(initVanta, 50);
-      }
-    };
-
-    // Initialize immediately since scripts are now synchronous
-    initVanta();
-  }, []);
-
+export default function Home(): React.ReactElement {
   return (
-    <div className="h-screen text-white overflow-hidden relative" style={{backgroundColor: '#222222'}}>
-      {/* Vanta.js background */}
-      <div id="vanta-background" className="absolute inset-0 w-full h-full"></div>
-      
-      {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/30"></div>
-
-      {/* Loading state */}
-      {!isBackgroundLoaded && (
-        <div className="absolute inset-0 flex items-center justify-center z-30">
-          <div className="text-white text-2xl">Loading...</div>
+    <div className='min-h-screen flex items-center justify-center px-4 py-8 bg-gray-900'>
+      <div className='w-full max-w-4xl mx-auto text-center space-y-8'>
+        {/* a16z Image */}
+        <div className='flex justify-center'>
+          <Image
+            src='/a16z.png'
+            alt='a16z logo'
+            width={400}
+            height={200}
+            className='w-full max-w-md md:max-w-lg h-auto'
+            priority
+          />
         </div>
-      )}
 
-      {/* Main content - only show when background is loaded */}
-      {isBackgroundLoaded && (
-        <div className="relative z-20 h-full flex items-center justify-center lg:justify-start">
-          {/* Content positioned 20% from left on desktop, centered on mobile */}
-          <div className="flex flex-col items-center justify-center px-4 lg:ml-[20%] lg:px-0 h-full">
-            {/* Logos section */}
-            <div className="mb-8 lg:mb-12">
-              <div className="flex items-center justify-center space-x-2 lg:space-x-8">
-                {/* a16z and SF Tech Week grouped together */}
-                <div className="flex items-center space-x-1 lg:space-x-4">
-                  <Image
-                    src="/logos/image 2.png"
-                    alt="a16z logo"
-                    width={180}
-                    height={90}
-                    className="rounded-lg"
-                  />
-                  
-                  <Image
-                    src="/logos/image 4.png"
-                    alt="SF Tech Week logo"
-                    width={180}
-                    height={90}
-                    className="rounded-lg"
-                  />
-                </div>
-
-                {/* X symbol */}
-                <div className="text-lg lg:text-5xl font-bold text-white drop-shadow-lg">×</div>
-                
-                {/* UC Berkeley Logo */}
-                <Image
-                  src="/logos/yellowberk.jpg"
-                  alt="Cal logo"
-                  width={180}
-                  height={90}
-                  className="rounded-lg"
-                />
-              </div>
-                
-              {/* Hackathon text */}
-              <div className="text-center mt-6 lg:mt-12">
-                <h1 className="text-3xl lg:text-8xl font-bold text-white drop-shadow-lg">Hackathon</h1>
-              </div>
-            </div>
-
-            {/* Date and time section */}
-            <div className="mb-8 lg:mb-16 text-center">
-              <div className="text-sm lg:text-2xl font-bold text-white mb-1">7pm - 12am</div>
-              <div className="text-base lg:text-3xl font-bold text-white mb-2">10 / 9 / 2025</div>
-            </div>
-
-            {/* Register button */}
-            <div className="w-auto">
-              <a 
-                href="https://partiful.com/e/5lvjTXL4wXzrRyIsYMxW?" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-block text-white px-7 py-3 lg:px-10 lg:py-4 rounded-full text-lg lg:text-xl font-semibold active:scale-95 lg:hover:scale-105 transition-transform duration-300 shadow-xl text-center min-h-[44px] flex items-center justify-center" 
-                style={{backgroundColor: '#ff3f81'}}
-              >
-                Register Now
-              </a>
-            </div>
-          </div>
+        {/* Body Text */}
+        <div className='space-y-4 max-w-xl mx-auto'>
+          <p className='text-sm md:text-base text-gray-300 leading-relaxed'>
+            Not for beginners. For the top 100 makers at Berkeley. If you make stuff happen, apply! Prizes are from top sponsors.
+          </p>
         </div>
-      )}
 
+        {/* Apply Button */}
+        <div className='flex justify-center'>
+          <Button asChild className='bg-white hover:bg-gray-100 text-black px-8 py-6 text-lg font-semibold'>
+            <a 
+              href='https://docs.google.com/forms/d/e/1FAIpQLSf-JnzyEhiOV02AyvI91v7GmKoTcDbZgu_HI6b5Bof11B2Cdg/viewform'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              Apply Now
+            </a>
+          </Button>
+        </div>
+      </div>
     </div>
   );
 }
