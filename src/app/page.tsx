@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 
 export default function Home(): React.ReactElement {
   return (
-    <div className='min-h-screen flex items-center justify-center px-4 py-8 bg-gray-900'>
+    <div className='min-h-screen flex items-center justify-center px-4 py-8' style={{backgroundColor: '#222222'}}>
       <div className='w-full max-w-4xl mx-auto text-center space-y-8'>
         {/* a16z Image */}
         <div className='flex justify-center'>
