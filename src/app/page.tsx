@@ -8,7 +8,7 @@ export default function Home(): React.ReactElement {
         {/* a16z Image */}
         <div className='flex justify-center'>
           <Image
-            src='/a16z.png'
+            src='/logos/sftechs.png'
             alt='a16z logo'
             width={400}
             height={200}
