@@ -36,6 +36,11 @@ export default function Home(): React.ReactElement {
             </a>
           </Button>
         </div>
+
+        {/* Team Info */}
+        <p className='text-sm md:text-base text-gray-300'>
+          Form teams before hackathon. If you get in the rest of your team will be auto accepted.
+        </p>
       </div>
     </div>
   );
