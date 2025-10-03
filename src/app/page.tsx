@@ -41,6 +41,23 @@ export default function Home(): React.ReactElement {
         <p className='text-sm md:text-base text-gray-300'>
           Form teams before hackathon. If you get in the rest of your team will be auto accepted.
         </p>
+
+        {/* Judges Section */}
+        <div className='space-y-6 pt-8 flex flex-col items-center'>
+          <h2 className='text-2xl md:text-3xl font-bold text-white'>Judges</h2>
+          <div className='space-y-4 flex flex-col items-center'>
+            <Image
+              src='/logos/IMG_6275.png'
+              alt='Judge'
+              width={300}
+              height={300}
+              className='rounded-lg'
+            />
+            <p className='text-sm md:text-base text-gray-300 max-w-md text-center'>
+              Saarth Shah is the founder and CEO of sixtyfour, a YC backed startup building AI research agents and a data orchestration platform that runs large scale people and company intelligence workflows for sales, recruiting, and marketing.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
