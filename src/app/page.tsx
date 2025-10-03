@@ -54,7 +54,7 @@ export default function Home(): React.ReactElement {
               className='rounded-lg'
             />
             <p className='text-sm md:text-base text-gray-300 max-w-md text-center'>
-              Saarth Shah is the founder and CEO of sixtyfour, a YC backed startup building AI research agents and a data orchestration platform that runs large scale people and company intelligence workflows for sales, recruiting, and marketing.
+              Saarth Shah is the founder and CEO of Sixtyfour, a YC backed startup building AI research agents and a data orchestration platform that runs large scale people and company intelligence workflows for sales, recruiting, and marketing.
             </p>
           </div>
         </div>
