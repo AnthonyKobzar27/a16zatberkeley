@@ -23,7 +23,7 @@
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(to bottom, var(--background) 0%, #000000 100%);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   min-height: 100vh;
